@@ -31,10 +31,17 @@ def basics():
     print os.path.join(b,a)                                 # C:\Temp\xx\0001.bmp
 
 
+path = "C:\\xxxx"
 
-lista = os.listdir("C:\\xxxx")
+filelist = os.listdir(path)
 
-print lista
+filename = path + "\\filelist.txt"
+textfile = open(filename, "w")
+for fil in filelist: 
+    textfile.write("%s\n" % fil)
+textfile.close()
+
+print filelist
 
 
 """
