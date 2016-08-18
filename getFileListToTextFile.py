@@ -35,10 +35,10 @@ path = "C:\\xxxx"
 
 filelist = os.listdir(path)
 
-filename = path + "\\filelist.txt"
-textfile = open(filename, "w")
-for fil in filelist: 
-    textfile.write("%s\n" % fil)
+outputfile = path + "\\filelist.txt"
+textfile = open(outputfile, "w")
+for filenames in filelist: 
+    textfile.write("%s\n" % filenames)
 textfile.close()
 
 print filelist
