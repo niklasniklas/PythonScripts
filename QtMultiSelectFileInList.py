@@ -5,7 +5,6 @@ Created on Tue Dec 15 16:19:03 2015
 @author: NIAP
 """
 
-
 from PyQt4 import QtCore, QtGui
 
 class FileDialog(QtGui.QFileDialog):
@@ -29,7 +28,7 @@ class Window(QtGui.QWidget):
         dialog = FileDialog()
 
         if dialog.exec_() == QtGui.QDialog.Accepted:
-            print(dialog.selectedFiles().takeFirst())
+            print(dialog.selectedFiles())
 
 if __name__ == '__main__':
 
