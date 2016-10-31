@@ -3,6 +3,11 @@
 Created on Sun Oct 30 21:38:53 2016
 
 @author: NiclasLaptop
+
+changeFilesWgui
+changeMultipleFilenames_general
+changeMultipleFilenames_images
+QtMultipleFileSelection
 """
 
 
