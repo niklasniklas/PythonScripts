@@ -103,3 +103,7 @@ if __name__ == '__main__':
         shutil.move(os.path.join(path,files),newfile)
         ii += 1
  """   
+ 
+#    currentRow = self.ventana.listWidget.currentRow()
+#    currentItem = self.ventana.listWidget.takeItem(currentRow)
+#    self.ventana.listWidget.insertItem(currentRow - 1, currentItem)
