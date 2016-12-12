@@ -43,18 +43,61 @@ class FileDialog(QtGui.QFileDialog):
 class Window(QtGui.QWidget):
     def __init__(self):
         QtGui.QWidget.__init__(self)
-        self.button1 = QtGui.QPushButton('Choose files...', self)
-        self.button1.clicked.connect(self.loadButton)
-        self.button2 = QtGui.QPushButton('Change outputfolder', self)
-        self.button2.clicked.connect(self.secondButton)
+        self.resize(800,800)
+        self.setMinimumSize(500,500)
+
+        #horizGroupBox = QtGui.QGroupBox(self)
+        #horizGroupBox.setTitle("Input files")
+        self.buttonload = QtGui.QPushButton('Add files...', self)
         self.listWgt = QtGui.QListWidget(self)
-        self.labelPath = QtGui.QLabel()
-        layout = QtGui.QVBoxLayout(self)
-        layout.addWidget(self.button1)
-        layout.addWidget(self.button2)
-        layout.addWidget(self.listWgt)
-        layout.addWidget(self.labelPath)
+        loadLayout = QtGui.QGridLayout(self)
+        loadLayout.addWidget(self.loadButton,  0,0)
+        loadLayout.addWidget(self.listWgt,0,1)
         
+        
+        #        http://stackoverflow.com/questions/21478270/pyqt-how-to-add-a-grid-layout-inside-a-qgroupbox-in-pyqt4
+        
+        
+        
+        """
+        # input        
+        self.button1 = QtGui.QPushButton('Choose files...', self)
+        self.listWgt = QtGui.QListWidget(self)
+        
+        # output
+        self.button2 = QtGui.QPushButton('Change outputfolder...', self)
+        self.labelPath = QtGui.QLabel(self)
+        self.edit1 = QtGui.QLineEdit(self)
+        self.edit2 = QtGui.QLineEdit(self)
+        
+        self.button1.setMinimumWidth(200)
+        
+        layout1 = QtGui.QHBoxLayout(self)
+        layout1.addWidget(self.button1)
+        layout1.addWidget(self.button2)
+      
+        layout = QtGui.QGridLayout(self)
+        #layout.addLayout(layout1,1,1)
+        layout.addWidget(self.button1, 0, 0)
+        layout.addWidget(self.listWgt, 1, 0, 1, 1)
+        layout.addWidget(self.button2, 0, 1)
+        #layout.addWidget(self.labelPath, 1, 1)
+        layout.addWidget(self.edit1, 2, 1)
+        layout.addWidget(self.edit2, 3, 1)
+        
+
+        #layout = QtGui.QVBoxLayout(self)
+        #layout.addWidget(self.button1)
+        #layout.addWidget(self.button2)
+        #layout.addWidget(self.listWgt)
+        #layout.addWidget(self.labelPath)
+
+        self.labelPath.setText("AAA")
+
+        self.button1.clicked.connect(self.loadButton)
+        self.button2.clicked.connect(self.secondButton)
+        """     
+
 
     def secondButton(self):
         dialog= PathDialog()
