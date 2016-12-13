@@ -46,13 +46,15 @@ class Window(QtGui.QWidget):
         self.resize(800,800)
         self.setMinimumSize(500,500)
 
-        #horizGroupBox = QtGui.QGroupBox(self)
-        #horizGroupBox.setTitle("Input files")
-        self.buttonload = QtGui.QPushButton('Add files...', self)
+        horizGroupBox = QtGui.QGroupBox(self)
+        horizGroupBox.setTitle("Input files")
+        horizGroupBox.setMinimumSize(500,500)
+        self.loadButton = QtGui.QPushButton('Add files...', self)
         self.listWgt = QtGui.QListWidget(self)
         loadLayout = QtGui.QGridLayout(self)
-        loadLayout.addWidget(self.loadButton,  0,0)
-        loadLayout.addWidget(self.listWgt,0,1)
+        loadLayout.addWidget(self.loadButton,0,0,1,1)
+        loadLayout.addWidget(self.listWgt,1,0,1,3)
+        horizGroupBox.setLayout(loadLayout)
         
         
         #        http://stackoverflow.com/questions/21478270/pyqt-how-to-add-a-grid-layout-inside-a-qgroupbox-in-pyqt4
