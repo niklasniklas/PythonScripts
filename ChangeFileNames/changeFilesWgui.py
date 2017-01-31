@@ -48,18 +48,18 @@ class Window(QtGui.QWidget):
 
         #horizGroupBox = QtGui.QGroupBox(self)
         #horizGroupBox.setTitle("Input files")
-        self.buttonload = QtGui.QPushButton('Add files...', self)
-        self.listWgt = QtGui.QListWidget(self)
-        loadLayout = QtGui.QGridLayout(self)
-        loadLayout.addWidget(self.loadButton,  0,0)
-        loadLayout.addWidget(self.listWgt,0,1)
+        #self.buttonload = QtGui.QPushButton('Add files...', self)
+        #self.listWgt = QtGui.QListWidget(self)
+        #loadLayout = QtGui.QGridLayout(self)
+        #loadLayout.addWidget(self.loadButton,  0,0)
+        #loadLayout.addWidget(self.listWgt,0,1)
         
         
         #        http://stackoverflow.com/questions/21478270/pyqt-how-to-add-a-grid-layout-inside-a-qgroupbox-in-pyqt4
         
         
         
-        """
+        
         # input        
         self.button1 = QtGui.QPushButton('Choose files...', self)
         self.listWgt = QtGui.QListWidget(self)
@@ -96,7 +96,7 @@ class Window(QtGui.QWidget):
 
         self.button1.clicked.connect(self.loadButton)
         self.button2.clicked.connect(self.secondButton)
-        """     
+             
 
 
     def secondButton(self):
