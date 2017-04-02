@@ -44,7 +44,7 @@ class Window(QtGui.QWidget):
     def __init__(self):
         QtGui.QWidget.__init__(self)
         self.resize(800,800)
-        self.setMinimumSize(500,500)
+        self.setMinimumSize(10,10)
 
         #horizGroupBox = QtGui.QGroupBox(self)
         #horizGroupBox.setTitle("Input files")
@@ -53,7 +53,8 @@ class Window(QtGui.QWidget):
         #loadLayout = QtGui.QGridLayout(self)
         #loadLayout.addWidget(self.loadButton,  0,0)
         #loadLayout.addWidget(self.listWgt,0,1)
-		"""
+
+        """
         horizGroupBox = QtGui.QGroupBox(self)
         horizGroupBox.setTitle("Input files")
         horizGroupBox.setMinimumSize(500,500)
@@ -79,23 +80,40 @@ class Window(QtGui.QWidget):
         # output
         self.button2 = QtGui.QPushButton('Change outputfolder...', self)
         self.labelPath = QtGui.QLabel(self)
-        self.edit1 = QtGui.QLineEdit(self)
-        self.edit2 = QtGui.QLineEdit(self)
+        #self.edit1 = QtGui.QLineEdit(self)
+        #self.edit2 = QtGui.QLineEdit(self)
         
         self.button1.setMinimumWidth(200)
         
-        layout1 = QtGui.QHBoxLayout(self)
-        layout1.addWidget(self.button1)
-        layout1.addWidget(self.button2)
-      
-        layout = QtGui.QGridLayout(self)
+        self.layout1 = QtGui.QVBoxLayout()
+        self.layout1.addWidget(self.button1)
+        self.layout1.addWidget(self.listWgt)
+        self.listWgt.addItem("AA")
+        self.listWgt.addItem("AAaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+        self.listWgt.addItem("AA")
+        self.listWgt.addItem("AA")
+        self.listWgt.addItem("AA")
+        self.listWgt.addItem("AA")
+
+        self.layout2 = QtGui.QVBoxLayout(self)
+        self.layout2.addWidget(self.button2)
+        self.layout2.addWidget(self.labelPath)
+
+        self.dlgLayout = QtGui.QHBoxLayout()
+        self.dlgLayout.addLayout(self.layout1)
+        self.dlgLayout.addLayout(self.layout2)
+        self.setLayout(self.dlgLayout)
+        
+ 
+       
+        #layout = QtGui.QGridLayout(self)
         #layout.addLayout(layout1,1,1)
-        layout.addWidget(self.button1, 0, 0)
-        layout.addWidget(self.listWgt, 1, 0, 1, 1)
-        layout.addWidget(self.button2, 0, 1)
+        #layout.addWidget(self.button1, 0, 0)
+        #layout.addWidget(self.listWgt, 1, 0, 1, 1)
+        #layout.addWidget(self.button2, 0, 1)
         #layout.addWidget(self.labelPath, 1, 1)
-        layout.addWidget(self.edit1, 2, 1)
-        layout.addWidget(self.edit2, 3, 1)
+        #layout.addWidget(self.edit1, 2, 1)
+        #layout.addWidget(self.edit2, 3, 1)
         
 
         #layout = QtGui.QVBoxLayout(self)
@@ -104,7 +122,7 @@ class Window(QtGui.QWidget):
         #layout.addWidget(self.listWgt)
         #layout.addWidget(self.labelPath)
 
-        self.labelPath.setText("AAA")
+        #self.labelPath.setText("AAA")
 
         self.button1.clicked.connect(self.loadButton)
         self.button2.clicked.connect(self.secondButton)
